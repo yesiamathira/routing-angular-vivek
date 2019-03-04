@@ -1,0 +1,11 @@
+<app-menu></app-menu>
+  <div style="text-align:center">
+    <h1>
+      {{ title }}!
+    </h1>
+    <hr>
+    <input type="text" placeholder="username" name="" [(ngModel)]="data.username"> <br/><br/>
+    <input type="password" placeholder="username" name="" [(ngModel)]="data.password"> <br/><br/>
+    <input type="button" (click)="onLogin()" name="" value="Login">
+    <input type="button" (click)="onAboutus()" name="" value="Aboutus">
+  </div>

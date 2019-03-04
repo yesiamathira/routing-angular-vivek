@@ -1,0 +1,45 @@
+<p>
+  customers works!
+</p>
+<app-menu></app-menu>
+<h2>My Customers</h2>
+<ul class="customeres">
+  <li *ngFor="let customer of customers"
+    [class.selected]="customer === selectedCustomer"
+    (click)="onSelect(hero)">
+    <span class="badge">{{customer.id}}</span> {{customer.name}}<span> {{customer.email}} </span>
+  </li>
+</ul>
+
+<ul class="customers" >
+  <li>
+  <button (click)="addCustomer()" type="" >Add Customer</button>
+  <button (click)="removeCustomer()" type="" >Remove Customer</button>
+  </li>
+  </ul>
+  <input type="text" name="customerName" placeholder="CustomerName" [(ngModel)]="customer.name"> <br><br>
+  <input type="" name="customerId" placeholder="CustomerId" [(ngModel)]="customer.id"> <br><br>
+  <input type="text" name="emailid" placeholder="EmailId" [(ngModel)]="customer.email"> <br><br>
+
+<!-- <div *ngFor="let customer of customers">
+<li>
+  {{customer.name}}
+   {{customer.id}}
+    {{customer.email}}
+</li>
+</div> -->
+
+
+
+<div *ngIf="selectedCustomer">
+
+  <h2>{{selectedCustomer.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedCustomer.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedCustomer.name" placeholder="name">
+      <input [(ngModel)]="selectedCustomer.email" placeholder="email">
+    </label>
+  </div>
+
+</div>

@@ -1,0 +1,17 @@
+<app-menu></app-menu>
+<p>
+  Sample dynamic buttons
+</p>
+<ul class="buttons"  *ngFor="let button of buttons">
+    <li>
+    <button (click)="addButton()" type="" >Add button</button>
+    <button (click)="removeButton()" type="" >Remove button</button>
+    </li>
+    <input type="text" name="" >
+</ul>
+<div *ngFor="let button of buttons">
+  <button>
+    {{button.name}}
+  </button>
+
+</div>
