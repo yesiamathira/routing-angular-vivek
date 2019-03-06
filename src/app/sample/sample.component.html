@@ -4,14 +4,25 @@
 </p>
 <ul class="buttons" >
     <li>
-    <button (click)="addButton()" type="" >Add button</button>
-    <button (click)="removeButton()" type="" >Remove button</button>
+      <div>
+        
+        <button (click)="addButton()" type="" >Add button</button>
+        <div *ngFor="let button of buttons; let i=index" >
+            <button type="button">
+              {{button.name}}
+            </button>            
+          </div>
+          <input type="number"  placeholder="Click me to remove a button of your choice" [(ngModel)]="button.name">
+          <button type="button" (click)="removeButton(button.name)" >Remove button</button>
+      </div>
+      
+    <div *ngFor="let button of buttons">
+        <!-- <input type="number"  placeholder="Click me to remove a button of your choice" [(ngModel)]="button.name">  -->
+      
+      
+         
+    </div>
+    
     </li>
-    <input type="text" name="" >
+    
 </ul>
-<div *ngFor="let button of buttons">
-  <button>
-    {{button.name}}
-  </button>
-
-</div>
