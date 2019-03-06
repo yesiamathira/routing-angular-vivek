@@ -1,6 +1,6 @@
-import { Customer } from './customer';
+import { customer } from './customer';
 
-export var CUSTOMERS: Customer[] = [
+export var CUSTOMERS: customer[] = [
   { id: 1, name: 'Sam' ,email: 'sam@gmail.com' },
   { id: 2, name: 'Mia' ,email: 'sam@gmail.com'},
   { id: 3, name: 'Bombasto' ,email: 'sam@gmail.com' },

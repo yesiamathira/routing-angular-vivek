@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from '../customer';
+import { customer } from '../customer';
 import { CUSTOMERS } from '../mock-customers';
 
 @Component({
@@ -9,8 +9,8 @@ import { CUSTOMERS } from '../mock-customers';
 })
 export class CustomersComponent implements OnInit {
   customers = CUSTOMERS;
-  customer:Customer = {id:0 , name:"" ,email:""};
-  selectedCustomer: Customer;
+  customer:customer = {id:0 , name:"" ,email:""};
+  selectedcustomer: customer;
   
   addCustomer(){
 
@@ -24,7 +24,7 @@ export class CustomersComponent implements OnInit {
   }
  removeCustomer(num)
  {
-var customerList:Customer[]=[];
+var customerList:customer[]=[];
 for(var i=0;i<this.customers.length;i++)
      {
       if(this.customers[i].id!=num)
@@ -34,10 +34,14 @@ for(var i=0;i<this.customers.length;i++)
      }
 this.customers=customerList;
 }
+cancelButton(this)
+{
+  this.customers.splice(this.customer,1);
+}
 constructor() { }
   ngOnInit() {
   }
-  onSelect(customer: Customer): void {
-    this.selectedCustomer = customer;
+  onSelect(customer: customer): void {
+    this.selectedcustomer = customer;
 }
 }
